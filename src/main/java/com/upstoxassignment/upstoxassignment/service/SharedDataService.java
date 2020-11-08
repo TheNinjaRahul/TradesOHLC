@@ -9,6 +9,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * This is very important class.
+ * All data we are using this has been managed by this class.
+ * This is something like data manager.
+ */
 @Service
 public class SharedDataService {
     private Map<String, OHCLWithStartAndEndTime> map = new ConcurrentHashMap<>();

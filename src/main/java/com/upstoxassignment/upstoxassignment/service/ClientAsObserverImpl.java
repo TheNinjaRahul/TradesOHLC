@@ -2,14 +2,17 @@ package com.upstoxassignment.upstoxassignment.service;
 
 import java.util.Objects;
 
-public class ObserverImpl implements IObserver {
-    public ObserverImpl(String observerName, String symbol) {
+/**
+ * ObserverImpl to use as client
+ */
+public class ClientAsObserverImpl implements IObserver {
+    private String observerName;
+    private String symbol;
+
+    public ClientAsObserverImpl(String observerName, String symbol) {
         this.observerName = observerName;
         this.symbol = symbol;
     }
-
-    private String observerName;
-    private String symbol;
 
     @Override
     public String getSymbolName() {
@@ -33,7 +36,7 @@ public class ObserverImpl implements IObserver {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ObserverImpl observer = (ObserverImpl) o;
+        ClientAsObserverImpl observer = (ClientAsObserverImpl) o;
         return Objects.equals(observerName, observer.observerName) &&
                 Objects.equals(symbol, observer.symbol);
     }

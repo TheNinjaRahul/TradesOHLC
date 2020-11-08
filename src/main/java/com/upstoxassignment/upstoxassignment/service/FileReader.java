@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
+
 @Component
 public class FileReader implements IReader {
 

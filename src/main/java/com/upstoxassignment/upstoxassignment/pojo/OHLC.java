@@ -3,6 +3,9 @@ package com.upstoxassignment.upstoxassignment.pojo;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * OHCL -> OpenPrice, HighPrice,ClosePrice, LowPrice
+ */
 public class OHLC implements Cloneable {
     private String symbol;
     private double open;

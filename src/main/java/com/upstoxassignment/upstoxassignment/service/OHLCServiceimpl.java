@@ -7,6 +7,9 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * OHLCService service classs
+ */
 @Service
 public class OHLCServiceimpl implements IOHLCService {
 

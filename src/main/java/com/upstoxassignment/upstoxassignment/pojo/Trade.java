@@ -1,5 +1,9 @@
 package com.upstoxassignment.upstoxassignment.pojo;
 
+
+/**
+ * Trade data
+ */
 public class Trade {
     private String sym;
     private String T;

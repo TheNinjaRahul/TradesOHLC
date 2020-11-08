@@ -7,16 +7,16 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class SubjectImpl implements ISubject {
+public class SubjectImpl implements ISymbolSubject {
 
     @Autowired
     SharedDataService sharedDataService;
 
     Object o = new Object();
-    private Map<ObserverImpl, Object> subscriberMap = new ConcurrentHashMap<>();
+    private Map<ClientAsObserverImpl, Object> subscriberMap = new ConcurrentHashMap<>();
 
     @Override
-    public void add(ObserverImpl observer) {
+    public void add(ClientAsObserverImpl observer) {
         if (!sharedDataService.getSubjectMap().containsKey(observer.getSymbol())) {
             sharedDataService.getSubjectMap().put(observer.getSymbol(), this);
         }
@@ -24,13 +24,13 @@ public class SubjectImpl implements ISubject {
     }
 
     @Override
-    public void remove(ObserverImpl observer) {
+    public void remove(ClientAsObserverImpl observer) {
         subscriberMap.remove(observer);
     }
 
     @Override
     public void notify(String msg) {
-        for (ObserverImpl observer : subscriberMap.keySet()) {
+        for (ClientAsObserverImpl observer : subscriberMap.keySet()) {
             observer.update(msg);
         }
     }

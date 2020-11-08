@@ -55,7 +55,7 @@ I have created worker 3 as scheduler thread which will run every 15 second.
 -------------------------------------------------------------------------------------------------
 
 How to run:
-
+------------------
 Create jar of this project.
 You will need to build the jar file first. Here is the syntax to run the main class from a jar file.
 
@@ -70,3 +70,15 @@ or
 Paramter 1: FileName that we want to load
 Paramter 2: Observer Name
 Paramter 3: Observer want to observe which Symbol.
+
+
+Test Case:
+--------------------------------------
+
+Running tese with SpringBootTest.
+Passing expected file data and observer name and observer SYMBOL as input.
+
+Worker 1 will read file.
+Worker 2 will create OHLC.
+Worker 3 will not run automatically because i have used spring configuration. So we use it as bean here.
+get data from Worker 3 and asserting it with expected objects.

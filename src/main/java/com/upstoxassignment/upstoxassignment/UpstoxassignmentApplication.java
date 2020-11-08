@@ -71,7 +71,7 @@ public class UpstoxassignmentApplication {
                 objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
                 objectMapper.setVisibilityChecker(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
 
-                ObserverImpl o = new ObserverImpl(observerName, observeSymbol);
+                ClientAsObserverImpl o = new ClientAsObserverImpl(observerName, observeSymbol);
                 SubjectImpl subject = app.getBean(SubjectImpl.class);
                 subject.add(o);
                 File file = null;
