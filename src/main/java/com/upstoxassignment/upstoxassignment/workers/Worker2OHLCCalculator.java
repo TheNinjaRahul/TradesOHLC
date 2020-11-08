@@ -42,7 +42,7 @@ public class Worker2OHLCCalculator extends Thread {
             public void run() {
                 Map map = sharedDataService.getMap();
                 //tried to optimize if we have subscriber then only we will calculate OHLC
-                if (sharedDataService.getSubscriberMap().containsKey(trade.getSym())) {
+                if (sharedDataService.getSubscriberDataMap().containsKey(trade.getSym())) {
                     if (map.containsKey(trade.getSym())) {
                         addExistingTrade(trade);
                     } else {
