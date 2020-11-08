@@ -12,7 +12,7 @@ with creating new class and use in our main app.
 
 Worker 1 read data and put that data in BlockingQueue<Trade>.
 
-Thats the job of worker 1.
+That's the job of worker 1.
 
 Worker 2:
 ---------------------------------------
@@ -67,15 +67,15 @@ or
 
 ./gradlew bootRun "classpath:sample.json" "Bloomberg" "XXBTZUSD"
 
-Paramter 1: FileName that we want to load
-Paramter 2: Observer Name
-Paramter 3: Observer want to observe which Symbol.
+Parameter 1: FileName that we want to load
+Parameter 2: Observer Name
+Parameter 3: Observer want to observe which Symbol.
 
 
 Test Case:
 --------------------------------------
 
-Running tese with SpringBootTest.
+Running test with SpringBootTest.
 Passing expected file data and observer name and observer SYMBOL as input.
 
 Worker 1 will read file.
