@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class OHLCServiceimpl implements IOHLCService {
@@ -18,7 +19,12 @@ public class OHLCServiceimpl implements IOHLCService {
 
     @Override
     public Trade getTrade() {
-        return trades.poll();
+        try {
+            return trades.pollFirst(2, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public BlockingDeque<Trade> getTrades() {

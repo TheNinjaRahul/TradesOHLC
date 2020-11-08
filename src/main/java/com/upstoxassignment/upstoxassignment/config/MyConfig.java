@@ -1,10 +1,13 @@
 package com.upstoxassignment.upstoxassignment.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-@Configurable
+@Configuration
+@EnableScheduling
+@ConditionalOnProperty(value = "scheduling.enabled", havingValue = "true", matchIfMissing = true)
 public class MyConfig {
-
 //    @Bean
 //    @Primary
 //    public ObjectMapper getObjectMapper() {
@@ -13,4 +16,5 @@ public class MyConfig {
 //        objectMapper.setVisibilityChecker(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
 //        return objectMapper;
 //    }
+
 }

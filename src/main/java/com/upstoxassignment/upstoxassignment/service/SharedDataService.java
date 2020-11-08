@@ -4,7 +4,7 @@ import com.upstoxassignment.upstoxassignment.pojo.OHCLWithStartAndEndTime;
 import com.upstoxassignment.upstoxassignment.pojo.OHLC;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Deque;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;

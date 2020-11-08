@@ -1,5 +1,6 @@
 package com.upstoxassignment.upstoxassignment.pojo;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class OHLC implements Cloneable {
@@ -93,5 +94,25 @@ public class OHLC implements Cloneable {
                 ", event='" + event + '\'' +
                 ", barNum=" + barNum +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OHLC ohlc = (OHLC) o;
+        return Double.compare(ohlc.open, open) == 0 &&
+                Double.compare(ohlc.high, high) == 0 &&
+                Double.compare(ohlc.low, low) == 0 &&
+                Double.compare(ohlc.closePrice, closePrice) == 0 &&
+                Double.compare(ohlc.volume, volume) == 0 &&
+                barNum == ohlc.barNum &&
+                symbol.equals(ohlc.symbol) &&
+                event.equals(ohlc.event);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(symbol, open, high, low, closePrice, volume, event, barNum);
     }
 }

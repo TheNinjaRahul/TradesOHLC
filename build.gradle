@@ -19,9 +19,10 @@ dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-websocket'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
-    compile group: 'com.fasterxml.jackson.databind', name: 'jackson-databind', version: '2.10.2'
-    compile group: 'org.springframework:spring-websocket:5.2.2.RELEASE'
-    compile group: 'org.springframework:sspring-messaging:5.2.2.RELEASE'
+//    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.10.2'
+//    compile group: 'org.springframework:spring-websocket:5.2.2.RELEASE'
+//    compile group: 'org.springframework:sspring-messaging:5.2.2.RELEASE'
+    testImplementation 'junit:junit:4.13'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

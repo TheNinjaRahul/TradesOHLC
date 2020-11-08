@@ -33,6 +33,7 @@ public class Worker1FileReader extends Thread {
 
         iReader.init(filepath);
         while (true) {
+            System.out.println("Worker 1 running ");
             String line = iReader.readLine();
             if (line == null) {
                 break;
