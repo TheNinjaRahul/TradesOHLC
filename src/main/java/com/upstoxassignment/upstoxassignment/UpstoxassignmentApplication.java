@@ -27,32 +27,6 @@ public class UpstoxassignmentApplication {
      */
     public static void main(String[] args) {
         ApplicationContext app = SpringApplication.run(UpstoxassignmentApplication.class, args);
-//        IReader filereader = app.getBean(FileReader.class);
-//        IOHLCService iohlcService = app.getBean(OHLCServiceimpl.class);
-//        SharedDataService sharedDataService = app.getBean(SharedDataService.class);
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-//        objectMapper.setVisibilityChecker(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
-//
-//        ObserverImpl o = new ObserverImpl(observerName, observeSymbol);
-//        SubjectImpl subject = app.getBean(SubjectImpl.class);
-//        subject.add(o);
-//        File file = null;
-//        try {
-//            file = ResourceUtils.getFile(filename);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        Worker1FileReader worker1FileReader = new Worker1FileReader(iohlcService, filereader, objectMapper, file.getAbsolutePath());
-//        worker1FileReader.start();
-////        try {
-////            worker1FileReader.join();
-////        } catch (InterruptedException e) {
-////            e.printStackTrace();
-////        }
-//        Worker2OHLCCalculator worker2OHLCCalculator = new Worker2OHLCCalculator
-//                (iohlcService, sharedDataService, app.getEnvironment().getProperty("interval"));
-//        worker2OHLCCalculator.start();
     }
 
     @Bean
@@ -63,7 +37,6 @@ public class UpstoxassignmentApplication {
                 String observerName = args[1];
                 String observeSymbol = args[2];
 
-//            ApplicationContext app = SpringApplication.run(UpstoxassignmentApplication.class, args);
                 IReader filereader = app.getBean(FileReader.class);
                 IOHLCService iohlcService = app.getBean(OHLCServiceimpl.class);
                 SharedDataService sharedDataService = app.getBean(SharedDataService.class);
@@ -83,11 +56,6 @@ public class UpstoxassignmentApplication {
                 Worker1FileReader worker1FileReader = new Worker1FileReader(iohlcService, filereader, objectMapper, file.getAbsolutePath());
                 worker1FileReader.setName("Reader");
                 worker1FileReader.start();
-//                try {
-//                    worker1FileReader.join();
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
                 Worker2OHLCCalculator worker2OHLCCalculator = new Worker2OHLCCalculator
                         (iohlcService, sharedDataService, app.getEnvironment().getProperty("interval"));
                 worker2OHLCCalculator.setName("Calculator");
