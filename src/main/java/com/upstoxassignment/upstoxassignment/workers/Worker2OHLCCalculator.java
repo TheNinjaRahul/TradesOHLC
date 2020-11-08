@@ -11,7 +11,8 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.TimeZone;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Worker2OHLCCalculator extends Thread {
 
@@ -31,8 +32,10 @@ public class Worker2OHLCCalculator extends Thread {
     public void run() {
         while (true) {
             Trade trade = iohlcService.getTrade();
-            Runnable task = getTradeTask(trade);
-            executorService.execute(task);
+            if (trade != null) {
+                Runnable task = getTradeTask(trade);
+                executorService.execute(task);
+            }
         }
     }
 

@@ -23,7 +23,7 @@ public class Worker3PriceSender extends Thread {
         this.iohlcService = iohlcService;
     }
 
-    @Scheduled(fixedDelay = 1500)
+    @Scheduled(fixedDelay = 1000)
     public void sendDataToSubscriber() {
         for (String symbol : sharedDataService.getSubscriberDataMap().keySet()) {
             OHLC ohlc = sharedDataService.getSubscriberDataMap().get(symbol).removeFirst();
